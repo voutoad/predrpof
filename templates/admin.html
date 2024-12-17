@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Панель администратора</h1>
+        <nav>
+            <button onclick="location.href='index.html'">На главную</button>
+        </nav>
+    </header>
+    <main>
+        <section id="inventory-management">
+            <h2>Управление инвентарем</h2>
+            <button onclick="openAddItemModal()">Добавить инвентарь</button>
+             <div id="edit-item-form">
+                  <h3>Редактировать инвентарь</h3>
+                 <label for="edit-item-id">ID инвентаря:</label>
+                 <input type="number" id="edit-item-id" required> <br>
+                <label for="edit-item-name">Название:</label>
+                <input type="text" id="edit-item-name" required><br>
+                 <label for="edit-item-price">Цена:</label>
+                <input type="number" id="edit-item-price" required><br>
+                <label for="edit-item-quantity">Количество:</label>
+                <input type="number" id="edit-item-quantity" required><br>
+                 <label for="edit-item-image">Изображение (ссылка):</label>
+                <input type="text" id="edit-item-image" required><br>
+                <label for="edit-item-status">Состояние:</label>
+                <select id="edit-item-status">
+                    <option value="new">Новый</option>
+                    <option value="used">Используется</option>
+                    <option value="broken">Сломанный</option>
+                </select><br>
+                <button onclick="editItem()">Редактировать</button>
+            </div>
+            <div id="assign-item-form">
+                <h3>Закрепить инвентарь</h3>
+                <label for="assign-item-id">ID инвентаря:</label>
+                <input type="number" id="assign-item-id" required><br>
+                 <label for="assign-user-id">ID пользователя:</label>
+                <input type="number" id="assign-user-id" required><br>
+                <button onclick="assignItem()">Закрепить</button>
+            </div>
+             <div id="purchase-management">
+                <h2>Управление закупками</h2>
+                <h3>Добавить в план закупок</h3>
+                <label for="purchase-name">Название:</label>
+                <input type="text" id="purchase-name" required><br>
+                <label for="purchase-quantity">Количество:</label>
+                <input type="number" id="purchase-quantity" required><br>
+                <label for="purchase-price">Цена:</label>
+                <input type="number" id="purchase-price" required><br>
+                 <label for="purchase-supplier">Поставщик:</label>
+                <input type="text" id="purchase-supplier" required><br>
+                 <button onclick="addPurchase()">Добавить</button>
+                 <br>
+                 <div id="purchase-list">
+                     <h2>Список закупок</h2>
+                 </div>
+            </div>
+              <div id="report-management">
+                <h2>Отчёты</h2>
+                  <button onclick="createReport()">Создать отчёт</button>
+                 <div id="reports"></div>
+            </div>
+             <div id="inventory-list">
+                <h2>Список инвентаря</h2>
+                 <ul id="admin-inventory-items">
+                </ul>
+             </div>
+        </section>
+    </main>
+    
+    <div id="add-item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddItemModal()">&times;</span>
+            <h3>Добавить инвентарь</h3>
+            <label for="modal-item-name">Название:</label>
+            <input type="text" id="modal-item-name" required><br>
+            <label for="modal-item-price">Цена:</label>
+            <input type="number" id="modal-item-price" required><br>
+            <label for="modal-item-quantity">Количество:</label>
+            <input type="number" id="modal-item-quantity" required><br>
+            <label for="modal-item-image">Изображение (ссылка):</label>
+            <input type="text" id="modal-item-image" required><br>
+            <label for="modal-item-status">Состояние:</label>
+            <select id="modal-item-status">
+                <option value="new">Новый</option>
+                <option value="used">Используется</option>
+                <option value="broken">Сломанный</option>
+            </select><br>
+            <button onclick="addItem()">Добавить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

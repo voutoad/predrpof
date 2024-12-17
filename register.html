@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Регистрация</h1>
+        <nav>
+            <button onclick="location.href='index.html'">На главную</button>
+        </nav>
+    </header>
+    <main>
+        <section id="register-form">
+            <h2>Регистрация пользователя</h2>
+            <label for="register-username">Имя пользователя:</label>
+            <input type="text" id="register-username" required><br>
+            <label for="register-password">Пароль:</label>
+            <input type="password" id="register-password" required><br>
+            <button onclick="register()">Зарегистрироваться</button>
+             <div id="registration-status"></div>
+        </section>
+    </main>
+     <script src="script.js"></script>
+</body>
+</html>

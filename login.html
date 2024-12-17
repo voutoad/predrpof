@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Вход</h1>
+        <nav>
+            <button onclick="location.href='index.html'">На главную</button>
+        </nav>
+    </header>
+    <main>
+        <section id="login-form">
+            <h2>Войти в систему</h2>
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" required><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" required><br>
+            <button onclick="login()">Войти</button>
+              <div id="login-status"></div>
+        </section>
+    </main>
+     <script src="script.js"></script>
+</body>
+</html>

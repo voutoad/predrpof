@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Личный кабинет</h1>
+    <nav>
+        <button onclick="location.href='index.html'">На главную</button>
+    </nav>
+</header>
+<main>
+    <section id="user-inventory">
+        <h2>Доступный инвентарь</h2>
+        <ul id="user-inventory-list">
+        
+        </ul>
+    </section>
+    <section id="request-form">
+        <h2>Заявка на получение инвентаря</h2>
+        <label for="request-item-id">ID инвентаря:</label>
+        <input type="number" id="request-item-id" required><br>
+        <button onclick="createRequest()">Создать заявку</button>
+    </section>
+        <section id="requests-list">
+        <h2>Мои заявки</h2>
+         <ul id="user-request-items">
+            
+         </ul>
+        </section>
+        <section id="repair-request-form">
+            <h2>Заявка на ремонт/замену</h2>
+            <label for="repair-item-id">ID инвентаря:</label>
+            <input type="number" id="repair-item-id" required><br>
+            <label for="repair-description">Описание проблемы:</label>
+            <textarea id="repair-description" required></textarea><br>
+            <button onclick="createRepairRequest()">Отправить</button>
+             <div id="repair-request-status"></div>
+        </section>
+</main>
+    <script src="script.js"></script>
+</body>
+</html>
